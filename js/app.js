@@ -2,20 +2,19 @@ var app = angular.module('app', ['ionic'])
 
 app.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
-
     // tour route
-    .state('tour', {
-      url: '/tour',
-      templateUrl: 'views/tour/tour.html'
-    })
     // default home/main page route
     .state('home', {
       url: '/home',
       templateUrl: 'views/home/home.html'
+    })
+    .state('tour', {
+      url: '/tour',
+      templateUrl: 'views/tour/tour.html'
     });
 
     // defualt fallback url
-
+    $urlRouterProvider.otherwise('/tour');
 });
 
 app.run(function($ionicPlatform) {
